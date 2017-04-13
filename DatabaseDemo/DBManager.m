@@ -103,21 +103,21 @@ static sqlite3_stmt *statement = nil;
         const char *query_stmt = [querySQL UTF8String];
         Student *stu = [[Student alloc] init];
         if (sqlite3_prepare_v2(dataBase, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-            NSString *name = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
-            NSString *depa = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
-            NSString *year = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
-            stu.name = name;
-            stu.department = depa;
-            stu.year = year;
-            sqlite3_reset(statement);
-            return stu;
-        } else {
-            NSLog(@"Not found");
-            sqlite3_reset(statement);
-            return nil;
+            if (sqlite3_step(statement) == SQLITE_ROW) {
+                stu.name = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                stu.department = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                stu.year = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+
+                sqlite3_reset(statement);
+                return stu;
+
+            } else {
+                NSLog(@"Not found");
+                sqlite3_reset(statement);
+                return nil;
+            }
         }
     }
-    
     return nil;
 }
 @end

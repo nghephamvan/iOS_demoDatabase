@@ -44,8 +44,29 @@
         msg = @"Add information successful";
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notification" message:msg preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-        
         [self presentViewController:alert animated:YES completion:nil];
+        
+        self.rc_txtRegNo.text = nil;
+        self.rc_txtName.text = nil;
+        self.rc_txtDepa.text = nil;
+        self.rc_txtYear.text = nil;
     }
+}
+
+- (IBAction)rc_txtFindEditingChanged:(UITextField *)sender {
+    Student *stu = [[Student alloc] init];
+    stu = [[DBManager getSharedInstance] findByRegNumber:self.rc_txtFind.text];
+    if (stu) {
+        self.rc_txtRegNo.text = self.rc_txtFind.text;
+        self.rc_txtName.text = stu.name;
+        self.rc_txtDepa.text = stu.department;
+        self.rc_txtYear.text = stu.year;
+    } else {
+        self.rc_txtRegNo.text = nil;
+        self.rc_txtName.text = nil;
+        self.rc_txtDepa.text = nil;
+        self.rc_txtYear.text = nil;
+    }
+
 }
 @end

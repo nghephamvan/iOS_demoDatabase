@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *rc_txtDepa;
 @property (strong, nonatomic) IBOutlet UITextField *rc_txtYear;
 - (IBAction)rc_btnSumit:(UIButton *)sender;
+- (IBAction)rc_txtFindEditingChanged:(UITextField *)sender;
 @end
 
