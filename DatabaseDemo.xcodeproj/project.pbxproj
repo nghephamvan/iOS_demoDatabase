@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844B39B71E9F197F0055D294 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B39B61E9F197F0055D294 /* DBManager.m */; };
+		844B39B91E9F1AE00055D294 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B39B81E9F1AE00055D294 /* Student.m */; };
 		846C89B51E9F10F300BA28F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C89B41E9F10F300BA28F5 /* main.m */; };
 		846C89B81E9F10F300BA28F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C89B71E9F10F300BA28F5 /* AppDelegate.m */; };
 		846C89BB1E9F10F300BA28F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C89BA1E9F10F300BA28F5 /* ViewController.m */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844B39B41E9F18B20055D294 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		844B39B61E9F197F0055D294 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		844B39B81E9F1AE00055D294 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		846C89B01E9F10F300BA28F5 /* DatabaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatabaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846C89B41E9F10F300BA28F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		846C89B61E9F10F300BA28F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		844B39B51E9F19210055D294 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				844B39B41E9F18B20055D294 /* DBManager.h */,
+				844B39B61E9F197F0055D294 /* DBManager.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		846C89A71E9F10F300BA28F5 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +128,7 @@
 		846C89B21E9F10F300BA28F5 /* DatabaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				844B39B51E9F19210055D294 /* Database */,
 				846C89F01E9F114800BA28F5 /* Model */,
 				846C89B61E9F10F300BA28F5 /* AppDelegate.h */,
 				846C89B71E9F10F300BA28F5 /* AppDelegate.m */,
@@ -169,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				846C89F11E9F116E00BA28F5 /* Student.h */,
+				844B39B81E9F1AE00055D294 /* Student.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -307,6 +323,8 @@
 				846C89B81E9F10F300BA28F5 /* AppDelegate.m in Sources */,
 				846C89B51E9F10F300BA28F5 /* main.m in Sources */,
 				846C89C11E9F10F300BA28F5 /* DatabaseDemo.xcdatamodeld in Sources */,
+				844B39B71E9F197F0055D294 /* DBManager.m in Sources */,
+				844B39B91E9F1AE00055D294 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +548,7 @@
 				846C89E21E9F10F300BA28F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		846C89E31E9F10F300BA28F5 /* Build configuration list for PBXNativeTarget "DatabaseDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +557,7 @@
 				846C89E51E9F10F300BA28F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		846C89E61E9F10F300BA28F5 /* Build configuration list for PBXNativeTarget "DatabaseDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +566,7 @@
 				846C89E81E9F10F300BA28F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
