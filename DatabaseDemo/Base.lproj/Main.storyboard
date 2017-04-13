@@ -63,6 +63,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="163" y="348" width="74" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="rc_btnSumit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aec-F4-CKv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -87,6 +90,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="rc_txtDepa" destination="UOD-PU-NoO" id="1Us-9Y-P6U"/>
+                        <outlet property="rc_txtFind" destination="Bt0-E5-jJV" id="qRn-ic-zHf"/>
+                        <outlet property="rc_txtName" destination="NhK-Q9-wxe" id="lzs-Bh-2bP"/>
+                        <outlet property="rc_txtRegNo" destination="yqN-aV-PW1" id="alC-Tm-VYu"/>
+                        <outlet property="rc_txtYear" destination="xgs-a8-9x0" id="GCQ-vj-5gP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

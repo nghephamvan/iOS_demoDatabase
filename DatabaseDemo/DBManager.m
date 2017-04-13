@@ -7,6 +7,7 @@
 //
 
 #import "DBManager.h"
+#import "Student.h"
 
 @implementation DBManager
 
@@ -37,7 +38,7 @@ static sqlite3_stmt *statement = nil;
         const char *dbpath = [dataPath UTF8String];
         if (sqlite3_open(dbpath, &dataBase) == SQLITE_OK) {
             char *errMsg;
-            const char *sql_stmt = "create table if not exist studentDetail (regno integer primary key, name text, department text, year text)";
+            const char *sql_stmt = "create table if not exists studentDetail (regno integer primary key, name text, department text, year text)";
             if (sqlite3_exec(dataBase, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
                 isSuccess = NO;
                 NSLog(@"Failed create table");
@@ -50,13 +51,12 @@ static sqlite3_stmt *statement = nil;
             NSLog(@"Failed create database");
         }
     }
-    
     return isSuccess;
 }
 -(BOOL) saveData: (NSString *) registerNumber name:(NSString *)name department:(NSString *)department year:(NSString  *) year{
     const char *dbpath = [dataPath UTF8String];
     if (sqlite3_open(dbpath, &dataBase) == SQLITE_OK) {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentDetail (regno , name, department, year) values (\"%ld\", \"%@\", \"%@\", \"%@\")", (long)[registerNumber integerValue], name, department, year];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into studentDetail (regno , name, department, year) values (\"%ld\", \"%@\", \"%@\", \"%@\");", (long)[registerNumber integerValue], name, department, year];
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(dataBase, insert_stmt, -1, &statement, NULL);
